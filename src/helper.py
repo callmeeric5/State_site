@@ -222,8 +222,7 @@ def generate_page(from_path, template_path, dest_path, base_path):
     title = extract_title(markdown)
 
     html_output = template.replace("{{ Title }}", title).replace("{{ Content }}", html)
-    html_output = html_output.replace('href="/', 'href="{basepath}').replace('src="/', 'src="{basepath}')
-
+    html_output = html_output.replace('href="/', f'href="{base_path}').replace('src="/', f'src="{base_path}')
     os.makedirs(os.path.dirname(dest_path), exist_ok=True)
     with open(dest_path, "w") as f:
         f.write(html_output)
