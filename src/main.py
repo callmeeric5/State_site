@@ -10,7 +10,7 @@ def main():
         shutil.rmtree("public")
     os.mkdir("public")
     _copy_dir_file("static", "public")
-    generate_pages_recursive("content", "template.html", "docs./", basepath)
+    generate_pages_recursive("content", "template.html", "docs", basepath)
 
 
 def _copy_dir_file(src, dst):
